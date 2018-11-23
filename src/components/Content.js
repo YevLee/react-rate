@@ -6,34 +6,44 @@ class Content extends Component{
     
     super(props);
        this.state={
-           inputValue:'',
+           name:'',
+           content:'',
            list:[],
            noList:false
        };
        this.handleClickBtn=this.handleClickBtn.bind(this);
-       this.handleChangeInput=this.handleChangeInput.bind(this);
-       this.handleChangeList=this.handleChangeList.bind(this)
+       this.handleChangeNameInput=this.handleChangeNameInput.bind(this);
+       this.handleChangeContentInput=this.handleChangeContentInput.bind(this)
+       this.handleChangeList=this.handleChangeList.bind(this);
+       
    }
    handleClickBtn(){
-       if(this.state.inputValue){
+       if(this.state.name){
             // var rateList=localStorage.getItem('localRate')
             // var localRate=JSON.parse(rateList)||[];
-            // localRate.push(this.state.inputValue)
+            // localRate.push(this.state.name)
             // localStorage.setItem('localRate',JSON.stringify(localRate));
         this.setState({
-            list:[...this.state.list,this.state.inputValue],
+            list:[...this.state.list,{name:this.state.name,content:this.state.content}],
             noList:true,
             //list:localRate,
-            inputValue:''
+            name:'',
+            content:''
         })
        }
    };
-   handleChangeInput(e){
+   handleChangeNameInput(e){
        const value=e.target.value;
        this.setState({
-           inputValue:value
+           name:value
        })
    }
+   handleChangeContentInput(e){
+    const value=e.target.value;
+    this.setState({
+        content:value
+    })
+}
    handleChangeList(todoItem){
        var obj=[];
         this.state.list.forEach((item) => {
@@ -57,8 +67,10 @@ class Content extends Component{
         <div className='content'>
             <div className='rateInputWrap'>
                 <RateInput
-                 inputValue={this.state.inputValue}
-                 handleChangeInput={this.handleChangeInput}
+                 name={this.state.name}
+                 content={this.state.content}
+                 handleChangeNameInput={this.handleChangeNameInput}
+                 handleChangeContentInput={this.handleChangeContentInput}
                  handleClickBtn={this.handleClickBtn} />
             </div>
             <div className='contentListWrap'>
