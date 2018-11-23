@@ -41,8 +41,12 @@ class Content extends Component{
                 obj.push(item);
             }
         });
+        if(obj.length==0){
+            var noList=false
+        }
         this.setState({
-            list:obj
+            list:obj,
+            noList:noList
         })
    }
    render(){

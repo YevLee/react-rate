@@ -1,4 +1,5 @@
 import React ,{Component} from 'react';
+import '../css/componentsStyle/rateList.css'
 class RateList extends Component{
    constructor(props){
        super(props);
