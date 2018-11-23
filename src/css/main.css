@@ -1,0 +1,4 @@
+@import './reset.css';
+@import './componentsStyle/header.css';
+@import './componentsStyle/content.css';
+@import './componentsStyle/footer.css'
