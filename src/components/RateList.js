@@ -11,7 +11,7 @@ class RateList extends Component{
    renderList(){
     return this.props.RateList.map((item,index)=>{
          return(
-             <li key={index}>{item}----<span onClick={this.handleDelete.bind(this,item)}>删除</span></li>
+             <li className='item' key={index}>{item}----<button className='btn' onClick={this.handleDelete.bind(this,item)}>删除</button></li>
          )
      })
  }
