@@ -41,12 +41,15 @@ class Content extends Component{
                 obj.push(item);
             }
         });
-        if(obj.length==0){
-            var noList=false
-        }
+     if(obj.length==0){
+         //var noList=false;
+         this.setState({
+             noList:false
+         })
+     }
         this.setState({
             list:obj,
-            noList:noList
+            //noList:noList
         })
    }
    render(){
